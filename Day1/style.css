@@ -1,0 +1,31 @@
+﻿body
+{
+     background-color: Aqua;    
+}
+div
+{
+    background-color: Green;
+}
+#div2
+{
+    background-color: Yellow;
+}
+.redclass
+{
+    background-color: Red;
+
+}
+#faceimage
+{
+        width:100px;
+        height:100px;
+}
+img.redclass
+{
+        width:200px;
+        height:200px;
+}
+img.width300
+{
+        width:300px;
+    }
