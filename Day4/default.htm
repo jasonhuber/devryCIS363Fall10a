@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        A little CSS/JS/HTML/FORMS
+    </title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="rml.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function ValidateMe() {
+           
+        var msg = "";
+        if (document.thisForm.txtName.value.length === 0) {
+            msg += "You must enter a name.\n";
+        }
+        if (document.thisForm.txtPass.value.length === 0) {
+            msg += "You must enter a password.\n";
+        }
+        debugger;
+        if (msg.length === 0) {
+            return true;
+        }
+        else {
+            alert(msg);
+            return false;
+        }
+    }
+    function ValidateMeCool() {
+        if (document.thisForm.txtName.value.length === 0) {
+            document.thisForm.txtName.style.forecolor = "#ff0000";
+           
+            if(document.getElementById("namedonotrepeat") == null) {
+            
+            var thediv = document.getElementById("namediv");
+            thediv.innerHTML += RML.div({
+                content: "You must enter a name",
+                style: "color:red", 
+                id: "namedonotrepeat"
+            });
+
+                }
+            }
+            return false;
+        }
+
+   
+    function ShowDiv(divid) {
+        var thediv = document.getElementById(divid);
+        thediv.style.display = block;
+    }
+
+    function ShowLogin() {
+        var thediv = document.getElementById("login");
+        thediv.style.display = "block";
+        thediv = document.getElementById("register")
+        thediv.style.display = "none";
+    }
+
+    function ShowRegister() {
+        var thediv = document.getElementById("register");
+        thediv.style.display = "block";
+        thediv = document.getElementById("login")
+        thediv.style.display = "none";
+    }
+    function ShowMoreStuff() {
+        var thediv = document.getElementById("container");
+        var eh = RML.a({href:"http://huberblog.com", content: "My Blog"})
+        thediv.innerHTML += RML.div({
+            content: eh, 
+            id: 'dyndiv',
+            _class: "white" });
+    }
+
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div id="header" class="white">
+            Home | 
+            <a href="#" onclick="ShowLogin()">Login</a>|
+            <a href="#" onclick="ShowRegister()">Register</a> | 
+            <a href="#" onclick="ShowMoreStuff()">More stuff</a>
+        </div>    
+        <div id="register" class="white" style="display:none;">
+            <form name="thisForm" id="thisForm" method="post" onsubmit="return ValidateMeCool()">
+               <div id="namediv"> Name: <input type="text" name="txtName" id="txtName" /> </div>
+                Password: <input type="password" name="txtPass" id="txtPass" /><br />
+                Gender:
+                <select name="cboGender" id="cboGender">
+                    <option value=""></option>
+                    <option value="F">Female</option>
+                    <option value="M" selected>Male</option>
+                </select> <br />
+
+                Check here if you wish to be spammed: <br />
+                <input type="checkbox" name="chkSpam" id="chkSpam" /> <br />
+                <input type="submit" name="cmdSubmit" id="cmdSubmit" />
+
+            </form>
+        </div>
+        <div id="login" class="white" style="display:none;">
+            Some logon stuff here...
+        </div>
+
+    </div>    
+</body>
+</html>

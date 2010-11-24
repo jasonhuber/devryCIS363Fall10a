@@ -1,0 +1,33 @@
+﻿body {
+    background-color:Gray;
+}
+
+#container
+{
+    width:1000px;
+    margin-left: auto;
+    margin-right: auto;   
+} 
+.white
+{
+        background-color:White;
+        padding: 2px;
+    }
+#header
+{
+    width:auto;
+    margin-bottom:2px;
+    }
+    
+#register
+{
+    float:left;
+    width: 450px;
+    }
+
+#login
+{
+    float:left;
+    width: 450px; 
+    margin-left: 2px;   
+    }
